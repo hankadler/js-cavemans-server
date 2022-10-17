@@ -1,0 +1,112 @@
+query GetMenuItems {
+  menuItems {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+query GetMenuItemsByType($randomType: MenuItemType!) {
+  menuItemsByType(type: $randomType) {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+query GetMenuItem($menuItemId: ID!) {
+  menuItem(menuItemId: $menuItemId) {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+query GetFoods {
+  foods {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+query GetSides {
+  sides {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+query GetDrinks {
+  drinks {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+query GetDesserts {
+  desserts {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+mutation DeleteMenuItems {
+  deleteMenuItems {
+    acknowledged
+    deletedCount
+  }
+}
+
+mutation CreateMenuItem($createMenuItemInput: CreateMenuItemInput!) {
+  createMenuItem(input: $createMenuItemInput) {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+mutation UpdateMenuItem($menuItemId: ID!, $updateMenuItemInput: UpdateMenuItemInput!) {
+  updateMenuItem(menuItemId: $menuItemId, input: $updateMenuItemInput) {
+    _id
+    type
+    image
+    name
+    description
+    price
+  }
+}
+
+mutation DeleteMenuItem($menuItemId: ID!) {
+  deleteMenuItem(menuItemId: $menuItemId) {
+    acknowledged
+    deletedCount
+  }
+}

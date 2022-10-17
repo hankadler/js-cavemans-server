@@ -1,0 +1,83 @@
+query GetUsers {
+  users {
+    _id
+    name
+    role
+  }
+}
+
+query GetUser($userId: ID!) {
+  user(userId: $userId) {
+    _id
+    name
+    role
+  }
+}
+
+mutation CreateUserError($createUserErrorInput: CreateUserInput!) {
+  createUser(input: $createUserErrorInput) {
+    _id
+    name
+    role
+  }
+}
+
+mutation CreateUserAdmin($createUserAdminInput: CreateUserInput!) {
+  createUser(input: $createUserAdminInput) {
+    _id
+    name
+    role
+  }
+}
+
+mutation CreateUserClient($createUserClientInput: CreateUserInput!) {
+  createUser(input: $createUserClientInput) {
+    _id
+    name
+    role
+  }
+}
+
+mutation Login($name: String!, $password: String!) {
+  login(name: $name, password: $password) {
+    _id
+    name
+    role
+  }
+}
+
+mutation Logout {
+  logout {
+    message
+  }
+}
+
+mutation UpdateUserError($userId: ID!, $updateUserErrorInput: UpdateUserInput!) {
+  updateUser(userId: $userId, input: $updateUserErrorInput) {
+    _id
+    name
+    role
+  }
+}
+
+mutation UpdateUser($userId: ID!, $updateUserInput: UpdateUserInput!) {
+  updateUser(userId: $userId, input: $updateUserInput) {
+    _id
+    name
+    role
+  }
+}
+
+mutation DeleteUsers {
+  deleteUsers {
+    acknowledged
+    deletedCount
+  }
+}
+
+mutation DeleteUser($userId: ID!) {
+  deleteUser(userId: $userId) {
+    acknowledged
+    deletedCount
+  }
+}
