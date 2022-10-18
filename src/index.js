@@ -1,5 +1,6 @@
 import { ApolloServer } from "apollo-server-express";
 import express from "express";
+import cors from "cors";
 import config from "./config";
 import db from "./db";
 import routes from "../etc/routes";
@@ -13,10 +14,12 @@ const main = async () => {
     resolvers,
     context,
     dataSources,
-    csrfPrevention: true
+    csrfPrevention: true,
+    introspection: !config.env.startsWith("prod")
   });
 
   const app = express();
+  app.use(cors());
   app.use(express.static("../client/src/common/assets/images"));
   routes.forEach((route) => app.use(route, express.static("../client/dist")));
 
