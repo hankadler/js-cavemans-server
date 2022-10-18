@@ -29,6 +29,7 @@ NODE_OPTIONS=--experimental-vm-modules;NODE_NO_WARNINGS=1  # test config
 
    - ``APP`` - app name
    - ``ENV`` - ``dev``, ``test`` or ``prod``
+   - ``PORT`` - server port, e.g. ``3000``
    - ``MONGO_DB_URI`` - e.g. ``mongodb://localhost:27017``
    - ``JWT_SECRET`` - jsonwebtoken secret key
    - ``JWT_EXPIRES_IN`` - jsonwebtoken expiration time, e.g. ``1h``

@@ -8,6 +8,7 @@ const srcDir = dirname(fileURLToPath(import.meta.url));
 const testDir = resolve(`${srcDir}/../test`);
 const env = process.env.ENV || "development";
 const app = process.env.APP || "app";
+const port = process.env.PORT || 3000;
 const db = {
   name: env.startsWith("prod")
     ? app
@@ -28,6 +29,7 @@ export default {
   testDir,
   env,
   app,
+  port,
   db,
   jwtSecret,
   jwtExpiresIn,

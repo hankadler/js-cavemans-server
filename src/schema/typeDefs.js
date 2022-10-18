@@ -1,4 +1,4 @@
-import { gql } from "apollo-server";
+import { gql } from "apollo-server-express";
 import MenuItem from "./MenuItem";
 import User from "./User";
 
